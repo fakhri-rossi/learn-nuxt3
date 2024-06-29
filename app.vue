@@ -7,7 +7,7 @@
 
 </script>
 
-<template>
+<!-- <template>
   <LazyHeader v-if="showHeader" />
   <div>Ini Contentnya</div>
   
@@ -21,6 +21,10 @@
     <Header />
     <Footer />
   </ClientOnly>
+</template> -->
+
+<template>
+  <NuxtPage />
 </template>
 
 <style>
