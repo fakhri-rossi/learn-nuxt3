@@ -6,7 +6,6 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <!-- <NuxtPage /> -->
 </template>
 
 <!-- app.vue -> layout -> pages -->

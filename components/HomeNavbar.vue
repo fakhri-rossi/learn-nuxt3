@@ -11,6 +11,10 @@
     <NuxtLink @click="onClick('contact')" :class="{active: isContact}" class="nav-item" to="/contact">
       Contact
     </NuxtLink>
+
+    <NuxtLink class="nav-item" to="/user/rossi/">
+      Dashboard
+    </NuxtLink>
   </div>
 </template>
 
@@ -25,15 +29,21 @@
     isAbout.value = false;
     isContact.value = false;
 
-    if(destination === 'home'){
-      isHome.value = true;
-      
-    } else if(destination === 'about'){
-      isAbout.value = true;
+    switch (destination) {
+      case 'home':
+        isHome.value = true;
+        break;
+        
+      case 'about':
+        isAbout.value = true;
+        break;
 
-    } else if(destination === 'contact'){
-      isContact.value = true;
-
+      case 'contact':
+        isContact.value = true;
+        break;
+    
+      default:
+        break;
     }
   }
 

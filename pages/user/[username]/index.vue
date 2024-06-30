@@ -1,8 +1,5 @@
 <template>
   <div>
-    <UserNavbar :username="$route.params.username" />
-    <h1>Dashboard</h1>
-    
     <ul>
       <li>
         Username: {{ $route.params.username }}
@@ -13,7 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-
+  definePageMeta({
+    layout: 'dashboard'
+  })
 </script>
 
 <style>

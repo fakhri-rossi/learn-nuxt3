@@ -8,7 +8,11 @@
 
 <script lang="ts" setup>
   const route = useRoute();
-  const username = route.params.username
+  const username = route.params.username;
+
+  definePageMeta({
+    layout: 'dashboard'
+  })
 </script>
 
 <style>
