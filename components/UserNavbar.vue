@@ -1,29 +1,41 @@
 <template>
   <div class="nav-container">
-    <NuxtLink :class="{active: isHome}" class="nav-item" to="/">Home</NuxtLink>
-    <NuxtLink :class="{active: isAbout}" class="nav-item" to="/about">About</NuxtLink>
-    <NuxtLink :class="{active: isContact}" class="nav-item" to="/contact">Contact</NuxtLink>
+    <NuxtLink @click="onClick('home')" :class="{active: isHome}" class="nav-item" to="/">
+      Home
+    </NuxtLink>
+
+    <NuxtLink @click="onClick('about')" :class="{active: isAbout}" class="nav-item" to="/about">
+      About
+    </NuxtLink>
+
+    <NuxtLink @click="onClick('contact')" :class="{active: isContact}" class="nav-item" to="/contact">
+      Contact
+    </NuxtLink>
   </div>
 </template>
 
 <script setup>
-  const props = defineProps(['current']);
-  let isHome = ref(false);
-  let isAbout = ref(false);
-  let isContact = ref(false);
+  let path = useRoute().path;
+  let isHome = ref(path === '/');
+  let isAbout = ref(path === '/about');
+  let isContact = ref(path === '/contact');
 
-  onMounted(() => {
-    if(props.current === 'home'){
+  const onClick = (destination) => {
+    isHome.value = false;
+    isAbout.value = false;
+    isContact.value = false;
+
+    if(destination === 'home'){
       isHome.value = true;
       
-    } else if(props.current === 'about'){
+    } else if(destination === 'about'){
       isAbout.value = true;
 
-    } else if(props.current === 'contact'){
+    } else if(destination === 'contact'){
       isContact.value = true;
 
     }
-  })
+  }
 
 </script>
 

@@ -1,14 +1,12 @@
 <template>
   <div>
-    Ini about
+    <UserNavbar />
+    <slot />
   </div>
 </template>
 
 <script lang="ts" setup>
-  useSeoMeta({
-    title: 'About',
-    description: 'Tentang Saya'
-  });
+
 </script>
 
 <style>

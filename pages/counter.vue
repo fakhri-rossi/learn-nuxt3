@@ -3,9 +3,13 @@
   <CounterButton />
 </template>
 
-<script lang="ts" setup>
+<script setup>
   useSeoMeta({
     title: 'Counter Page'
+  })
+
+  definePageMeta({
+    layout: 'dashboard'
   })
 </script>
 
